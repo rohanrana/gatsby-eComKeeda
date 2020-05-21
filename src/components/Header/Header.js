@@ -8,44 +8,44 @@ import { Link, navigate } from "gatsby"
 class Header extends React.Component {
   state = { isDown: false }
   componentDidMount() {
-    document.getElementById("header1-container").style.display = "none"
+    // document.getElementById("header1-container").style.display = "none"
 
-    const scrollUp = "scrollUp"
-    const scrollDown = "scrollDown"
-    let lastScroll = 0
-    const body = document.body
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.pageYOffset
-      if (currentScroll == 0) {
-        body.classList.remove(scrollUp)
+    // const scrollUp = "scrollUp"
+    // const scrollDown = "scrollDown"
+    // let lastScroll = 0
+    // const body = document.body
+    // window.addEventListener("scroll", () => {
+    //   const currentScroll = window.pageYOffset
+    //   if (currentScroll == 0) {
+    //     body.classList.remove(scrollUp)
 
-        return
-      }
+    //     return
+    //   }
 
-      if (currentScroll <= 128) {
-        // alert("YYY")
-        // body.classList.remove(scrollUp)
-        document.getElementById("header1-container").style.display = "none"
-      }
+    //   if (currentScroll <= 128) {
+    //     // alert("YYY")
+    //     // body.classList.remove(scrollUp)
+    //     document.getElementById("header1-container").style.display = "none"
+    //   }
 
-      if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
-        // down
-        body.classList.remove(scrollUp)
-        body.classList.add(scrollDown)
-        document.getElementById("header1-container").style.display = "none"
-      } else if (
-        currentScroll < lastScroll &&
-        body.classList.contains(scrollDown)
-      ) {
-        // up
-        body.classList.remove(scrollDown)
-        body.classList.add(scrollUp)
-        document.getElementById("header1-container").style.display = "block"
-      }
-      if (lastScroll === currentScroll) {
-      }
-      lastScroll = currentScroll
-    })
+    //   if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+    //     // down
+    //     body.classList.remove(scrollUp)
+    //     body.classList.add(scrollDown)
+    //     document.getElementById("header1-container").style.display = "none"
+    //   } else if (
+    //     currentScroll < lastScroll &&
+    //     body.classList.contains(scrollDown)
+    //   ) {
+    //     // up
+    //     body.classList.remove(scrollDown)
+    //     body.classList.add(scrollUp)
+    //     document.getElementById("header1-container").style.display = "block"
+    //   }
+    //   if (lastScroll === currentScroll) {
+    //   }
+    //   lastScroll = currentScroll
+    // })
   }
   render() {
     return (
@@ -102,7 +102,7 @@ class Header extends React.Component {
                   </Col>
                 </Row>
               </Container>
-              <div id="header1-container" className="header-container">
+              {/* <div id="header1-container" className="header-container">
                 <Row>
                   <Col>
                     <img src={Logo} width={80} alt="noImage" />
@@ -128,7 +128,7 @@ class Header extends React.Component {
                     </div>
                   </Col>
                 </Row>
-              </div>
+              </div> */}
             </React.Fragment>
           )
         }}
