@@ -1,5 +1,5 @@
 import React from "react"
-import style from "./stickyNewsletter.module.css"
+import style from "./newsletter.module.css"
 export default function StickyNewsLetter() {
   return (
     <div class={style.container}>
@@ -21,3 +21,4 @@ export default function StickyNewsLetter() {
   )
 }
 //commit changes
+//dsdsd
