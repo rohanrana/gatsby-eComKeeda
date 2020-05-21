@@ -1,0 +1,101 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+  /* padding: 25px; */
+}
+.footerContainer {
+  background-color: #f5f5f5;
+}
+
+.userLoginSec {
+  text-align: right;
+  padding-top: 15px;
+}
+
+.userLoginSec ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.userLoginSec ul li {
+  display: inline-block;
+}
+
+.userLoginSec ul li a {
+  padding: 0 10px;
+  display: block;
+  position: relative;
+  color: #111;
+}
+.userLoginSec ul li a:before {
+  height: 16px;
+  width: 1px;
+  background: #000;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+.userLoginSec ul li:last-child a:before {
+  display: none;
+}
+.topNav {
+  color: white;
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+}
+.pullRight {
+  float: right !important;
+}
+.sfMenu {
+  float: left;
+}
+
+.sfMenu li {
+  white-space: normal;
+  margin-left: 0px;
+  margin-right: 2px;
+  float: left;
+  z-index: 1;
+  position: relative;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 350;
+}
+.sfMenu a {
+  padding: 14px 10px 15px;
+  text-decoration: none;
+  zoom: 1;
+  display: block;
+  position: relative;
+}
+.sfMenu > li > a::before {
+  content: "";
+  width: 100%;
+  display: inline-block;
+  height: 16px;
+  margin-top: 3px;
+  padding: 0px 2px;
+  left: 0px;
+  position: absolute;
+  /* border: 1px solid #7a7c86; */
+  border-right: 1px solid #000;
+  z-index: -1;
+}
+
+.sfMenu > li:last-child a:before {
+  display: none;
+}
+
+.headerContainer {
+  /* display: flex; */
+  position: sticky;
+  /* web-kit-po÷ */
+}
