@@ -67,7 +67,7 @@ class Header extends React.Component {
               <Container className={["p-3"].join(" ")}>
                 <Row>
                   <Col>
-                    <img onClick={() => navigate("/")} src={Logo} width={155} />
+                    <img onClick={() => navigate("/")} src={Logo} width={155}  alt="noImage" />
                   </Col>
                   <Col md={10}>
                     <div className={style.userLoginSec}>
@@ -105,7 +105,7 @@ class Header extends React.Component {
               <div id="header1-container" className="header-container">
                 <Row>
                   <Col>
-                    <img src={Logo} width={80} />
+                    <img src={Logo} width={80} alt="noImage" />
                   </Col>
                   <Col md={10}>
                     <div
