@@ -17,7 +17,7 @@ export default function Gridpost(props) {
           className={style.child}
         ></div>
         <div className={style.layouts}>
-          <Image />
+          {/* <Image /> */}
 
           <div className={style.posterCat}>
             <span className={style.themeBackground}>{props.category}</span>

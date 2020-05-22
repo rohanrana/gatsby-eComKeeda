@@ -28,6 +28,13 @@ exports.createPages = ({ graphql, actions }) => {
           slug
         }
       }
+      posts: allWordpressPost {
+        edges {
+          node {
+            title
+          }
+        }
+      }
     }
   `).then(results => {
     results.data.allWordpressPost.nodes.forEach(node => {
@@ -41,6 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     })
+   
     results.data.allWordpressCategory.nodes.forEach(node => {
       createPage({
         path: `category/${node.slug}`,

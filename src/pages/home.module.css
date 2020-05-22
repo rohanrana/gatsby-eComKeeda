@@ -10,4 +10,18 @@
 .contentLeft {
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+.loadMoreBtn {
+  margin-bottom: 30px;
+  width: auto !important;
+  color: white;
+  font-size: 16px;
+  padding: 15px 30px;
+  display: inline-block;
+  line-height: 1;
+  background: #19192a !important;
+  border: 0px solid silver;
+  cursor: pointer;
+  border-radius: 0;
 }
