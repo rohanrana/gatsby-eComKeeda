@@ -9,7 +9,6 @@ class Header extends React.Component {
   state = { isDown: false }
   componentDidMount() {
     // document.getElementById("header1-container").style.display = "none"
-
     // const scrollUp = "scrollUp"
     // const scrollDown = "scrollDown"
     // let lastScroll = 0
@@ -18,16 +17,13 @@ class Header extends React.Component {
     //   const currentScroll = window.pageYOffset
     //   if (currentScroll == 0) {
     //     body.classList.remove(scrollUp)
-
     //     return
     //   }
-
     //   if (currentScroll <= 128) {
     //     // alert("YYY")
     //     // body.classList.remove(scrollUp)
     //     document.getElementById("header1-container").style.display = "none"
     //   }
-
     //   if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
     //     // down
     //     body.classList.remove(scrollUp)
@@ -67,7 +63,13 @@ class Header extends React.Component {
               <Container className={["p-3"].join(" ")}>
                 <Row>
                   <Col>
-                    <img onClick={() => navigate("/")} src={Logo} width={155}  alt="noImage" />
+                    <img
+                      className="lazyload"
+                      onClick={() => navigate("/")}
+                      src={Logo}
+                      width={155}
+                      alt="noImage"
+                    />
                   </Col>
                   <Col md={10}>
                     <div className={style.userLoginSec}>

@@ -24,14 +24,18 @@ export default function Gridpost(props) {
             <div className={style.postInfo}>
               <span className={style.posterShares}>
                 <img
+                  className="lazyload"
                   src={require("../../images/share.png")}
                   alt="shate imgP
+                  
             "
                 />
                 0 <span className="mt-data-text">shares</span>
               </span>
               <span className={style.posterViews}>
                 <img
+                  className="lazyload"
+
                   src={require("../../images/power.png")}
                   alt="shate imgP
             "

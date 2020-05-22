@@ -26,7 +26,7 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} alt="noImage" />
+  return <Img className="lazyload" fluid={data.placeholderImage.childImageSharp.fluid} alt="noImage" />
 }
 
 export default Image

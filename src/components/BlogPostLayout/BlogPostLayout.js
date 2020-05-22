@@ -32,6 +32,8 @@ const BlogPostLayout = ({ data }) => {
           <h1 dangerouslySetInnerHTML={{ __html: post.title }}></h1>
           <div style={{ padding: "20px" }}>
             <img
+                  className="lazyload"
+
               src={
                 post.featured_media
                   ? post.featured_media.source_url

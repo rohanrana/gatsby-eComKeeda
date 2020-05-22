@@ -28,6 +28,8 @@ export default function HorizontalCard(props) {
               src={require("../../images/power-2.png")}
               alt="shate imgP
             "
+            className="lazyload"
+
             />
             <span>187 views</span>
           </span>

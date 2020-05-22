@@ -14,7 +14,7 @@ import "./layout.css"
 import Footer from "./Footer/Footer"
 import SEO from "./SEO"
 import { Container } from "react-bootstrap"
-
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
