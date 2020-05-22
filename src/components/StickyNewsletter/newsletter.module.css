@@ -66,6 +66,7 @@
 .sidebarContact small {
   display: block;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
+  color: #1b110d;
 
 }
