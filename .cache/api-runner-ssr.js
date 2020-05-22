@@ -1,6 +1,12 @@
 var plugins = [{
       plugin: require('/Users/rohanrana/gatsby-eComKeeda/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
+    },{
+      plugin: require('/Users/rohanrana/gatsby-eComKeeda/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      options: {"plugins":[],"name":"ecomKeeda - Blog Site","short_name":"ecomKeeda","start_url":"/","background_color":"#fff","theme_color":"#fff","display":"standalone","cache_busting_mode":"query","include_favicon":true,"legacy":true,"theme_color_in_head":true,"cacheDigest":null},
+    },{
+      plugin: require('/Users/rohanrana/gatsby-eComKeeda/node_modules/gatsby-plugin-offline/gatsby-ssr'),
+      options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
