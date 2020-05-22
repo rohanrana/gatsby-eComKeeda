@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import { navigate } from "gatsby"
 import style from "./Gridpost.module.css"
+import Image from "../image"
 
 export default function Gridpost(props) {
   return (
@@ -16,6 +17,8 @@ export default function Gridpost(props) {
           className={style.child}
         ></div>
         <div className={style.layouts}>
+          <Image />
+
           <div className={style.posterCat}>
             <span className={style.themeBackground}>{props.category}</span>
           </div>
@@ -35,7 +38,6 @@ export default function Gridpost(props) {
               <span className={style.posterViews}>
                 <img
                   className="lazyload"
-
                   src={require("../../images/power.png")}
                   alt="shate imgP
             "

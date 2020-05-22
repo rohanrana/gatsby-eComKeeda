@@ -14,19 +14,19 @@ import Img from "gatsby-image"
  */
 //dsadsd
 const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  // //   query {
+  // //     placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+  // //       childImageSharp {
+  // //         fluid(maxWidth: 300) {
+  // //           ...GatsbyImageSharpFluid
+  // //         }
+  // //       }
+  // //     }
+  // //   }
+  // // `)
 
-  return <Img className="lazyload" fluid={data.placeholderImage.childImageSharp.fluid} alt="noImage" />
+  return <Img fluid={"gatsby.jpg"} alt="noImage" />
 }
 
 export default Image

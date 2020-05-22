@@ -46,7 +46,7 @@ const IndexPage = ({ data }) => {
                 return (
                   <HorizontalCard
                     {...post}
-                    category={post.categories[0].name}
+                    category={post.categories?post.categories[0].name:""}
                     image={post.featured_media?post.featured_media.source_url :"http://via.placeholder.com/1024" }
                     date={post.date}
                     author={post.author.name}
