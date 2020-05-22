@@ -25,7 +25,8 @@ const BlogPostLayout = ({ data }) => {
             ? post.featured_media.source_url
             : "http://via.placeholder.com/1024"
         }
-        keywords={post.categories.map(res => res.name).join(", ")}
+        keywords ="bolloywood,corona,news,gaming,technology"
+        // keywords={post.categories.map(res => res.name).join(", ")}
       />
       <Header />
       <div className="container">
