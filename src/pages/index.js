@@ -100,7 +100,7 @@ class IndexPage extends React.Component {
                     />
                   )
                 })}
-
+{/* //Added Load More Functionality..... */}
                 <Button
                   className={style.loadMoreBtn}
                   onClick={this.handleClickPagination}
