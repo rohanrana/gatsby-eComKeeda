@@ -9,12 +9,15 @@ export default function Gridpost(props) {
       <Link to={`/${props.slug}/`}>
         <div style={{ height: props.height }} className={style.parent}>
           <div
-            style={{ backgroundImage: `url(${props.image})` }}
+            // style={{ backgroundImage: `url(${props.image})` }}
             className={style.child}
-          ></div>
+          >
+            <OptimizedImage
+              src={props.image}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
           <div className={style.layouts}>
-            {/* <Image /> */}
-
             <div className={style.posterCat}>
               <span className={style.themeBackground}>{props.category}</span>
             </div>
@@ -22,11 +25,11 @@ export default function Gridpost(props) {
             {!props.notitle && (
               <div className={style.postInfo}>
                 <span className={style.posterShares}>
-                  <OptimizedImage src={require("../../images/share.png")} />0{" "}
-                  <span className="mt-data-text">shares</span>
+                  <img src={require("../../images/share.png")} alt="no-image" />
+                  0 <span className="mt-data-text">shares</span>
                 </span>
                 <span className={style.posterViews}>
-                  <OptimizedImage src={require("../../images/power.png")} />
+                  <img src={require("../../images/power.png")} alt="no-image" />
                   187 <span className="mt-data-text">views</span>
                 </span>
               </div>
