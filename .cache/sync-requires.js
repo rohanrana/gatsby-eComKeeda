@@ -5,7 +5,7 @@ const preferDefault = m => m && m.default || m
 
 
 exports.components = {
-  "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/rohanrana/gatsby-eComKeeda/.cache/dev-404-page.js"))),
+  "component---cache-caches-gatsby-plugin-offline-app-shell-js": hot(preferDefault(require("/Users/rohanrana/gatsby-eComKeeda/.cache/caches/gatsby-plugin-offline/app-shell.js"))),
   "component---src-components-blog-post-layout-blog-post-layout-js": hot(preferDefault(require("/Users/rohanrana/gatsby-eComKeeda/src/components/BlogPostLayout/BlogPostLayout.js"))),
   "component---src-components-category-post-layout-category-post-layout-js": hot(preferDefault(require("/Users/rohanrana/gatsby-eComKeeda/src/components/CategoryPostLayout/CategoryPostLayout.js"))),
   "component---src-pages-404-js": hot(preferDefault(require("/Users/rohanrana/gatsby-eComKeeda/src/pages/404.js"))),
