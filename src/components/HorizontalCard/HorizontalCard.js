@@ -1,7 +1,7 @@
 import React from "react"
 import style from "./Horizontal.module.css"
 import { Link } from "gatsby"
-import OptimizedImage from "../image"
+// import OptimizedImage from "../image"
 export default function HorizontalCard(props) {
   return (
     <Link to={`/${props.slug}/`}>
@@ -18,7 +18,7 @@ export default function HorizontalCard(props) {
             // }}
             className={style.child}
           >
-            <OptimizedImage style={{width:"100%"}}  src={props.image} />
+            <img style={{width:"100%"}}  src={props.image} />
           </div>
           <div className={style.layouts}>
             <div className={style.posterCat}>

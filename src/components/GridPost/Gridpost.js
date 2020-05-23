@@ -12,10 +12,7 @@ export default function Gridpost(props) {
             // style={{ backgroundImage: `url(${props.image})` }}
             className={style.child}
           >
-            <OptimizedImage
-              src={props.image}
-              style={{ width: "100%", height: "100%" }}
-            />
+            <img src={props.image} style={{ width: "100%", height: "100%" }} />
           </div>
           <div className={style.layouts}>
             <div className={style.posterCat}>
