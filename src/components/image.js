@@ -7,7 +7,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component"
 // import errorImage from "../images/placeholder.png"
 
 const OptimizedImage = ({ src, style }) => (
-  <LazyLoadImage
+  <img
     alt={"NO IMAGE"}
     style={style}
     src={src} // use normal <img> attributes as props
