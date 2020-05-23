@@ -1,16 +1,18 @@
 import React from "react"
-import Img from "react-cool-img"
+// import Img from "react-cool-img"
 
-// Suggest to use low quality or vector images
-import loadingImage from "../images/placeholder.png"
-import errorImage from "../images/placeholder.png"
+// // Suggest to use low quality or vector images
+// import loadingImage from "../images/placeholder.png"
+// import errorImage from "../images/placeholder.png"
 
 const OptimizedImage = ({ src, style }) => (
-  <Img
-    placeholder={loadingImage}
+  <img
+    // placeholder={loadingImage}
     src={src}
     style={style}
-    error={errorImage}
+    // cache
+
+    // error={errorImage}
     alt="React Cool Img"
   />
 )
