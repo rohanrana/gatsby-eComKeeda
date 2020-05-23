@@ -1,33 +1,18 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import Img from "react-cool-img"
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
- */
-//dsadsd
-const Image = ({image}) => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     placeholderImage: file(relativePath: { eq: "http://via.placeholder.com/1024" }) {
-  //       childImageSharp {
-  //         fluid(maxWidth: 300) {
-  //           ...GatsbyImageSharpFluid
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+// Suggest to use low quality or vector images
+import loadingImage from "../images/placeholder.png"
+import errorImage from "../images/placeholder.png"
 
-  // return <Img fluid={data.placeholderImage.childImageSharp.fluid} alt="noImage" />
-  return  <h1>Rohan</h1>
-}
+const OptimizedImage = ({ src, style }) => (
+  <Img
+    placeholder={loadingImage}
+    src={src}
+    style={style}
+    error={errorImage}
+    alt="React Cool Img"
+  />
+)
 
-export default Image
+export default OptimizedImage

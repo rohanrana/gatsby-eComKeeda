@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import Logo from "../../images/logo-normal.png"
 import style from "./Header.module.css"
 import { StaticQuery, graphql } from "gatsby"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 class Header extends React.Component {
   state = { isDown: false }
   componentDidMount() {
@@ -50,6 +50,7 @@ class Header extends React.Component {
           query {
             allWordpressCategory {
               nodes {
+                id
                 name
                 slug
               }
@@ -63,13 +64,14 @@ class Header extends React.Component {
               <Container className={["p-3"].join(" ")}>
                 <Row>
                   <Col>
-                    <img
-                      className="lazyload"
-                      onClick={() => navigate("/")}
-                      src={Logo}
-                      width={155}
-                      alt="noImage"
-                    />
+                    <Link to="/">
+                      <img
+                        className="lazyload"
+                        src={Logo}
+                        width={155}
+                        alt="noImage"
+                      />
+                    </Link>
                   </Col>
                   <Col md={10}>
                     <div className={style.userLoginSec}>
@@ -87,14 +89,14 @@ class Header extends React.Component {
                       </ul>
                     </div>
                     <div className={style.topNav}>
-                      <div class={style.pullRight}>
+                      <div className={style.pullRight}>
                         <ul className={style.sfMenu}>
                           {headerMenu.map(menu => {
+                            const url = `/category/${menu.slug}/`
+
                             return (
-                              <li>
-                                <Link to={`category/${menu.slug}`}>
-                                  {menu.name}
-                                </Link>
+                              <li key={menu.id}>
+                                <Link to={url}>{menu.name}</Link>
                               </li>
                             )
                           })}
@@ -114,7 +116,7 @@ class Header extends React.Component {
                       style={{ marginTop: "-8px", marginRight: "12%" }}
                       className={style.topNav}
                     >
-                      <div class={style.pullRight}>
+                      <div className={style.pullRight}>
                         <ul className={style.sfMenu}>
                           {headerMenu.map(menu => {
                             return (

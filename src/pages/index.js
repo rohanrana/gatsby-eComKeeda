@@ -2,11 +2,11 @@ import React from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 import Gridpost from "../components/GridPost/Gridpost"
-import { Row, Col, Button } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 import style from "./home.module.css"
 import HorizontalCard from "../components/HorizontalCard/HorizontalCard"
 import StickyNewsLetter from "../components/StickyNewsletter/StickyNewsLetter"
-import { Link } from "gatsby"
+import InfiniteScroll from "react-infinite-scroll-component"
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -16,18 +16,18 @@ class IndexPage extends React.Component {
       currentPage: 1,
       ItemsPerPage: 100,
       pageNumbers: null,
+      currentItems: [],
     }
     this.handleClickPagination = this.handleClickPagination.bind(this)
   }
   componentDidMount() {
-    let numberOfPages = calcpagenumbers(
-      this.state.postArray,
-      this.state.ItemsPerPage
-    )
-    numberOfPages !== null &&
-      this.setState({
-        pageNumbers: numberOfPages,
-      })
+    const { postArray, currentPage, ItemsPerPage } = this.state
+
+    const indexOfLastItem = currentPage * ItemsPerPage
+    const indexOfFirstItem = 0
+    const currentItems = postArray.slice(indexOfFirstItem, indexOfLastItem)
+
+    this.setState({ currentItems })
   }
 
   handleClickPagination(event) {
@@ -36,17 +36,20 @@ class IndexPage extends React.Component {
         currentPage: this.state.currentPage + 1,
       },
       () => {
-        // this.setState({})
+        const { postArray, currentPage, ItemsPerPage } = this.state
+        const indexOfLastItem = currentPage * ItemsPerPage
+        const indexOfFirstItem = 0
+        const currentItems = postArray.slice(indexOfFirstItem, indexOfLastItem)
+
+        this.setState({
+          currentItems: [...this.state.currentItems, ...currentItems],
+        })
       }
     )
     // document.body.scrollTop = document.documentElement.scrollTop = 0
   }
   render() {
-    const { postArray, currentPage, ItemsPerPage, pageNumbers } = this.state
-
-    const indexOfLastItem = currentPage * ItemsPerPage
-    const indexOfFirstItem = 0
-    const currentItems = postArray.slice(indexOfFirstItem, indexOfLastItem)
+    const { postArray, currentItems } = this.state
 
     return (
       <Layout>
@@ -65,7 +68,7 @@ class IndexPage extends React.Component {
         <Row>
           {postArray.slice(0, 2).map(d => {
             return (
-              <Col style={{ marginRight: "-17px" }}>
+              <Col key={d.id} style={{ marginRight: "-17px" }}>
                 <Gridpost
                   {...d}
                   category={d.categories[0].name}
@@ -85,47 +88,49 @@ class IndexPage extends React.Component {
             <div className={[style.contentLeft, "mt-3"].join(" ")}>
               <h2 className={style.heading}>Latest News </h2>
               <div className={style.listContainer}>
-                {currentItems.map(post => {
-                  return (
-                    <HorizontalCard
-                      {...post}
-                      category={post.categories ? post.categories[0].name : ""}
-                      image={
-                        post.featured_media
-                          ? post.featured_media.source_url
-                          : "http://via.placeholder.com/1024"
-                      }
-                      date={post.date}
-                      author={post.author.name}
-                    />
-                  )
-                })}
-{/* //Added Load More Functionality..... */}
-                <Button
+                <InfiniteScroll
+                  dataLength={currentItems.length} //This is important field to render the next data
+                  next={this.handleClickPagination}
+                  hasMore={currentItems.length !== postArray.length}
+                  loader={<h4 style={{ position: "absolute" }}>Loading...</h4>}
+                  endMessage={
+                    <p style={{ textAlign: "center" }}>
+                      <b>Yay! You have seen it all</b>
+                    </p>
+                  }
+                  // below props only if you need pull down functionality
+                >
+                  {currentItems.map(post => {
+                    return (
+                      <HorizontalCard
+                        key={post.id}
+                        {...post}
+                        category={
+                          post.categories ? post.categories[0].name : ""
+                        }
+                        image={
+                          post.featured_media
+                            ? post.featured_media.source_url
+                            : "http://via.placeholder.com/1024"
+                        }
+                        date={post.date}
+                        author={post.author.name}
+                      />
+                    )
+                  })}
+                </InfiniteScroll>
+
+                {/* //Added Load More Functionality..... */}
+                {/* <Button
                   className={style.loadMoreBtn}
                   onClick={this.handleClickPagination}
                 >
                   Load More Blogs
-                </Button>
+                </Button> */}
               </div>
             </div>
           </Col>
           <Col xs={6} md={4}>
-            {/* {this.state.pageNumbers !== null &&
-              this.state.pageNumbers.map(number => {
-                return (
-                  <li
-                    key={number}
-                    id={number}
-                    className={
-                      number === this.state.currentPage ? "active" : ""
-                    }
-                    onClick={this.handleClickPagination}
-                  >
-                    {number}
-                  </li>
-                )
-              })} */}
             <StickyNewsLetter />
           </Col>
         </Row>
@@ -133,12 +138,6 @@ class IndexPage extends React.Component {
     )
   }
 }
-// const IndexPage = ({ data }) => {
-//   let postArray = data.allWordpressPost.nodes
-//   return (
-
-//   )
-// }
 
 export const query = graphql`
   {
@@ -163,11 +162,4 @@ export const query = graphql`
   }
 `
 
-const calcpagenumbers = (items, itemsPerPage) => {
-  const pageNumbers = []
-  for (let i = 1; i <= Math.ceil(items.length / itemsPerPage); i++) {
-    pageNumbers.push(i)
-  }
-  return pageNumbers
-}
 export default IndexPage

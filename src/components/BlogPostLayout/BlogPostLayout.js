@@ -11,8 +11,6 @@ import Header from "../Header/Header"
 import SEO from "../SEO"
 import innertext from "innertext"
 import Footer from "../Footer/Footer"
-import Image from "../image"
-
 const BlogPostLayout = ({ data }) => {
   const post = data.wordpressPost
   return (
@@ -32,17 +30,7 @@ const BlogPostLayout = ({ data }) => {
       <div className="container">
         <div className="row justify-content-md-center">
           <h1 dangerouslySetInnerHTML={{ __html: post.title }}></h1>
-          <div style={{ padding: "20px" }}>
-            <Image
-              image={
-                post.featured_media
-                  ? post.featured_media.source_url
-                  : "http://via.placeholder.com/1024"
-              }
-              alt={post.slug}
-            />
-            {/* <Gridpost /> */}
-          </div>
+        
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
       </div>
