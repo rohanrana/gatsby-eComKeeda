@@ -21,28 +21,21 @@ class IndexPage extends React.Component {
     this.handleClickPagination = this.handleClickPagination.bind(this)
   }
   componentDidMount() {
-    const { postArray, currentPage, ItemsPerPage } = this.state
-
-    const indexOfLastItem = currentPage * ItemsPerPage
-    const indexOfFirstItem = 0
-    const currentItems = postArray.slice(indexOfFirstItem, indexOfLastItem)
-
+    const { postArray, ItemsPerPage } = this.state
+    const currentItems = postArray.slice(0, ItemsPerPage)
     this.setState({ currentItems })
   }
 
   handleClickPagination(event) {
     this.setState(
       {
-        currentPage: this.state.currentPage + 1,
+        ItemsPerPage: this.state.ItemsPerPage + 100,
       },
       () => {
-        const { postArray, currentPage, ItemsPerPage } = this.state
-        const indexOfLastItem = currentPage * ItemsPerPage
-        const indexOfFirstItem = 0
-        const currentItems = postArray.slice(indexOfFirstItem, indexOfLastItem)
-
+        const { postArray } = this.state
+        const currentItems = postArray.slice(0, this.state.ItemsPerPage)
         this.setState({
-          currentItems: [...this.state.currentItems, ...currentItems],
+          currentItems: currentItems,
         })
       }
     )

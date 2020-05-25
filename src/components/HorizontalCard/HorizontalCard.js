@@ -7,8 +7,6 @@ export default function HorizontalCard(props) {
   return (
     <Link to={`/${props.slug}/`}>
       <div
-        // onClick={() => navigate(props.slug)}
-        // onKeyDown={() => navigate(props.slug)}
         style={{ cursor: "pointer" }}
         className={style.HCardContainer}
       >
