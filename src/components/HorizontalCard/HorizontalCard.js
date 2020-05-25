@@ -6,10 +6,7 @@ import OptimizedImage from "../image"
 export default function HorizontalCard(props) {
   return (
     <Link to={`/${props.slug}/`}>
-      <div
-        style={{ cursor: "pointer" }}
-        className={style.HCardContainer}
-      >
+      <div style={{ cursor: "pointer" }} className={style.HCardContainer}>
         <div style={{ height: props.height }} className={style.parent}>
           <div
             // style={{
@@ -20,7 +17,7 @@ export default function HorizontalCard(props) {
             <OptimizedImage style={{ width: "100%" }} src={props.image} />
           </div>
           <div className={style.layouts}>
-            <div className={style.posterCat}> 
+            <div className={style.posterCat}>
               <span className={style.themeBackground}>{props.category}</span>
             </div>
           </div>
@@ -43,7 +40,11 @@ export default function HorizontalCard(props) {
               <span className={style.userName}> {props.author} </span>
               <span className={style.postDate}> - </span>
               <span className={style.postDate}> {props.date} </span>
-              <p dangerouslySetInnerHTML={{ __html: props.excerpt }}></p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: props.excerpt.slice(0, 200),
+                }}
+              ></p>
             </div>
           </div>
         </div>
