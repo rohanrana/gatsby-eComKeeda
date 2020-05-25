@@ -86,7 +86,7 @@ class IndexPage extends React.Component {
                   next={this.handleClickPagination}
                   hasMore={currentItems.length !== postArray.length}
                   loader={<h4 style={{ position: "absolute" }}>Loading...</h4>}
-                  endMessage={
+                  endMessage={  
                     <p style={{ textAlign: "center" }}>
                       <b>Yay! You have seen it all</b>
                     </p>
