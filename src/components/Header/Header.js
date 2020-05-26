@@ -77,7 +77,7 @@ class Header extends React.Component {
                     <div className={style.userLoginSec}>
                       <ul>
                         <li>
-                          <Link to="/login/">Login</Link>
+                          <Link to="/signin/">Login</Link>
                         </li>
                         <li>
                           <Link to="/register/">Register</Link>
@@ -85,7 +85,7 @@ class Header extends React.Component {
                       </ul>
                     </div>
                     <div className={style.topNav}>
-                      <div className={style.pullRight}>    
+                      <div className={style.pullRight}>
                         <ul className={style.sfMenu}>
                           {headerMenu.map(menu => {
                             const url = `/category/${menu.slug}/`
@@ -105,6 +105,11 @@ class Header extends React.Component {
               {this.props.login === true && (
                 <Row className={style.subHeading}>
                   <h1>Membership Login</h1>
+                </Row>
+              )}
+              {this.props.register === true && (
+                <Row className={style.subHeading}>
+                  <h1>Membership Registration</h1>
                 </Row>
               )}
               {/* <div id="header1-container" className="header-container">

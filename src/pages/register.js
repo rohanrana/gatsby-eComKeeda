@@ -15,7 +15,7 @@ const Register = () => {
     alert(JSON.stringify(values))
   }
   return (
-    <Layout login={true}>
+    <Layout register={true}>
       <form onSubmit={handleSubmit}>
         <div className={style.loginContainer}>
           <h4>Become a Knowledge Keeda on eComKeeda</h4>

@@ -15,7 +15,7 @@ import Footer from "./Footer/Footer"
 import SEO from "./SEO"
 import { Container } from "react-bootstrap"
 import "lazysizes/plugins/parent-fit/ls.parent-fit"
-const Layout = ({ children, login }) => {
+const Layout = ({ children, login, register }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -29,7 +29,11 @@ const Layout = ({ children, login }) => {
   return (
     <>
       <SEO />
-      <Header login={login} siteTitle={data.site.siteMetadata.title} />
+      <Header
+        login={login}
+        register={register}
+        siteTitle={data.site.siteMetadata.title}
+      />
       {/* <div className="container">{children}</div> */}
       <Container>{children}</Container>
       <Footer />
