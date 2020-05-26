@@ -45,6 +45,7 @@ export default function HorizontalCard(props) {
                   __html: props.excerpt.slice(0, 200),
                 }}
               ></p>
+              
             </div>
           </div>
         </div>

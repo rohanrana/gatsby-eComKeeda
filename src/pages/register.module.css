@@ -1,0 +1,70 @@
+.loginContainer {
+  display: flex;
+  /* justify-content: center; */
+  padding: 30px;
+  width: 75%;
+  flex-direction: column;
+  margin-left: 15%;
+  text-align: center;
+}
+.loginInnerContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 3%;
+  border: 1px solid #e4e7ea;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 28px;
+  text-align: initial;
+}
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.inputContainer > lable {
+  color: #5c5c63;
+  font-weight: 500;
+}
+.loginSubheading {
+  font-size: 13px;
+  /* color: grey; */
+  line-height: 1.618;
+  color: #5c5c63;
+  margin: 0px;
+  padding: 0px 0px 20px;
+  font-weight: 300;
+}
+
+.inputContainer [type="text"],
+.inputContainer input[type="email"],
+.inputContainer input[type="password"] {
+  border: 1px solid #e4e7ea;
+  background: #f8f8f8;
+  height: 50px;
+}
+
+.loginInnerContainer input[type="submit"] {
+  width: 15% !important;
+  color: white;
+  font-size: 16px;
+  padding: 15px 30px;
+  display: inline-block;
+  line-height: 1;
+  background: #19192a !important;
+  border: 0px solid silver;
+  cursor: pointer;
+  margin-top: 5%;
+}
+
+.errorSec {
+  color: red;
+}

@@ -81,9 +81,16 @@
   display: none;
 }
 
-
 .headerContainer {
   /* display: flex; */
   position: sticky;
   /* web-kit-po÷ */
+}
+.subHeading {
+  background: black;
+  color: white;
+  padding: 10px;
+}
+.subHeading > h1 {
+  margin-left: 10%;
 }
