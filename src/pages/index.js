@@ -64,7 +64,7 @@ class IndexPage extends React.Component {
               <Col key={d.id} style={{ marginRight: "-17px" }}>
                 <Gridpost
                   {...d}
-                  category={d.categories[0].name}
+                  category={d.categories ? d.categories[0].name : null}
                   image={
                     d.featured_media
                       ? d.featured_media.source_url
@@ -86,7 +86,7 @@ class IndexPage extends React.Component {
                   next={this.handleClickPagination}
                   hasMore={currentItems.length !== postArray.length}
                   loader={<h4 style={{ position: "absolute" }}>Loading...</h4>}
-                  endMessage={  
+                  endMessage={
                     <p style={{ textAlign: "center" }}>
                       <b>Yay! You have seen it all</b>
                     </p>
