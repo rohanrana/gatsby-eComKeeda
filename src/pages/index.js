@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 import Gridpost from "../components/GridPost/Gridpost"
@@ -7,6 +7,7 @@ import style from "./home.module.css"
 import HorizontalCard from "../components/HorizontalCard/HorizontalCard"
 import StickyNewsLetter from "../components/StickyNewsletter/StickyNewsLetter"
 import InfiniteScroll from "react-infinite-scroll-component"
+import InnerBloglistComponent from "../components/InnerBlogListComponent/InnerBloglistComponet"
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -91,25 +92,30 @@ class IndexPage extends React.Component {
                       <b>Yay! You have seen it all</b>
                     </p>
                   }
-                  // below props only if you need pull down functionality
                 >
                   {currentItems.map(post => {
-                    return (
-                      <HorizontalCard
-                        key={post.id}
-                        {...post}
-                        category={
-                          post.categories ? post.categories[0].name : ""
-                        }
-                        image={
-                          post.featured_media
-                            ? post.featured_media.source_url
-                            : "http://via.placeholder.com/1024"
-                        }
-                        date={post.date}
-                        author={post.author.name}
-                      />
-                    )
+                    if (post.categories && post.categories.length > 0) {
+                      return (
+                        <Fragment>
+                          <HorizontalCard
+                            key={post.id}
+                            {...post}
+                            category={
+                              post.categories ? post.categories[0].name : ""
+                            }
+                            image={
+                              post.featured_media
+                                ? post.featured_media.source_url
+                                : "http://via.placeholder.com/1024"
+                            }
+                            date={post.date}
+                            author={post.author.name}
+                          />
+                          <InnerBloglistComponent />
+                          <hr />
+                        </Fragment>
+                      )
+                    }
                   })}
                 </InfiniteScroll>
 
