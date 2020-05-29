@@ -1,16 +1,28 @@
-import React from "react"
+      import React, { Fragment } from "react"
+import { Link } from "gatsby"
 import style from "./InnerBloglistComponent.module.css"
 import OptimizedImage from "../image"
 
-export default function SlickCard() {
+export default function SlicCard(props) {
   return (
-    <div className={style.cardWrapper}>
-      <OptimizedImage
-        style={{
-          width: "97%",
-          height: 120,
-        }}
-      />
-    </div>
+    <Fragment>
+      <Link to={`/${props.slug}/`}>
+        <div style={{ height: 120,width:"97%" }} className={style.parent}>
+          <div
+            className={style.child}
+          >
+            <OptimizedImage
+              src={props.image}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </div>
+          <div className={style.layouts}>
+            <div className={style.posterCat}>
+  <p className={style.themeBackground}>{props.title}</p>
+            </div>
+          </div>
+        </div>
+      </Link>
+    </Fragment>
   )
 }

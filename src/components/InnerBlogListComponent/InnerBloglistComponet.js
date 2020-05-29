@@ -16,21 +16,23 @@ const settings = {
 }
 
 class InnerBloglistComponent extends Component {
+
   render() {
+    console.log("INNNR BLOGS",)
+
+    let postArray= this.props.postArray.filter(d=>d.categories &&d.categories[0].name===this.props.category).slice(0,10)
     return (
       <div>
         <Slider {...settings}>
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
-          <SlickCard />
+          {postArray.map((d)=>{
+         
+          return  <SlickCard  image={
+            d.featured_media
+              ? d.featured_media.source_url
+              : "http://via.placeholder.com/1024"
+          }  {...d}/>
+          })}
+         
         </Slider>
       </div>
     )

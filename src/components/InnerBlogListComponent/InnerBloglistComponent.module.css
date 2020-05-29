@@ -1,3 +1,162 @@
-.cardWrapper {
-  display: flex;
-}
+/* Global Styling */
+.wrapper {
+    padding: 50px 50px;
+    max-width: 1200px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+  }
+  
+  .right {
+    float: right !important;
+  }
+  /* Image zoom on hover + Overlay colour */
+  .parent {
+    width: 100%;
+    /* margin: 20px; */
+    height: 560px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .box-2 {
+    height: 280px !important;
+  }
+  .layouts {
+    position: absolute;
+    /* padding: 0px 30px 30px 30px; */
+    z-index: 3;
+    bottom: 0;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3px;
+    width:250px
+  }
+  .postInfo {
+    padding-bottom: 10px;
+    font-size: 14px !important;
+  }
+  .posterShare,
+  .posterViews {
+    padding: 0px 5px 0px 15px;
+  }
+  
+  .posterShare,
+  .posterViews img {
+    width: 12px;
+    padding: 1px 1px 1px -1px;
+    margin-right: 5px;
+    padding: 0px;
+  }
+  .themeBackground {
+    /* background: rgba(0, 0, 0, 0.5); */
+    /* padding: 7px; */
+    /* text-transform: uppercase; */
+    font-size: 10px;
+  }
+  .parent:before {
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    /* background: -moz-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
+    background: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.85) 100%
+    ); */
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%,rgba(0, 0, 0, 0.85) 100%); */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e3383838',GradientType=0 );
+  }
+  
+  .child {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .child span {
+    color: white; /* Good thing we set a fallback color! */
+    font-family: sans-serif;
+    padding: 25%;
+    position: absolute;
+  }
+  
+  /* Several different images */
+  .bg-one {
+    background-image: url(https://media.timeout.com/images/101602611/image.jpg);
+  }
+  .bg-two {
+    background-image: url(http://s1.it.atcdn.net/wp-content/uploads/2015/08/2-London.jpg);
+  }
+  .bg-three {
+    background-image: url(https://media.timeout.com/images/101484105/image.jpg);
+  }
+  .bg-four {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Hollywood_Sign.jpg/1280px-Hollywood_Sign.jpg);
+  }
+  .bg-five {
+    background-image: url(http://www.travelandleisure.com/sites/default/files/styles/tnl_redesign_article_landing_page/public/1453920892/DUBAI-554088081-ABOVE0116.jpg?itok=dcoZnCrc);
+  }
+  .bg-six {
+    background-image: url(http://blog.whitepages.com/wp-content/uploads/2015/04/san-franc.jpg);
+  }
+  
+  .parent:hover .child,
+  .parent:focus .child {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  
+  .parent:hover .child:before,
+  .parent:focus .child:before {
+    display: block;
+  }
+  
+  .parent:hover a,
+  .parent:focus a {
+    display: block;
+  }
+  
+  .child:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(52, 73, 94, 0.75);
+  }
+  
+  /* Media Queries */
+  @media screen and (max-width: 960px) {
+    .parent {
+      width: 100%;
+      margin: 20px 0px;
+    }
+    .wrapper {
+      padding: 20px 20px;
+    }
+  }
+  
+  .hello {
+    display: none;
+  }
+  
