@@ -25,6 +25,18 @@ a {
   /* opacity: 100%; */
   /* display: none; */
 }
+.slick-slider.center.slick-initialized {
+  width: 90%;
+ 
+  margin-left: 4%;
+}
+.slick-prev:before, .slick-next:before {
+
+  color: #111 !important;
+}
+hr{
+  border-top: 1px solid rgba(0, 0, 0, 15.84) !important;
+}
 /* .header-container .header-inner {
   display: none;
 } */

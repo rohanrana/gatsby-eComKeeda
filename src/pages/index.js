@@ -111,7 +111,7 @@ class IndexPage extends React.Component {
                             date={post.date}
                             author={post.author.name}
                           />
-                          <InnerBloglistComponent category={post.categories[0].name} postArray={this.state.postArray}  />
+                         <InnerBloglistComponent category={post.categories[0].name} postArray={this.state.postArray}  />
                           <hr />
                         </Fragment>
                       )
