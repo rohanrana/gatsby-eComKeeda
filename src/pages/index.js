@@ -15,7 +15,7 @@ class IndexPage extends React.Component {
     this.state = {
       postArray: this.props.data.allWordpressPost.nodes,
       currentPage: 1,
-      ItemsPerPage: 100,
+      ItemsPerPage: 150,
       pageNumbers: null,
       currentItems: [],
     }
