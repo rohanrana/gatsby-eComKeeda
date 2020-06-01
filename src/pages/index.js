@@ -8,7 +8,7 @@ import HorizontalCard from "../components/HorizontalCard/HorizontalCard"
 import StickyNewsLetter from "../components/StickyNewsletter/StickyNewsLetter"
 import InfiniteScroll from "react-infinite-scroll-component"
 import InnerBloglistComponent from "../components/InnerBlogListComponent/InnerBloglistComponet"
-
+// ..
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
