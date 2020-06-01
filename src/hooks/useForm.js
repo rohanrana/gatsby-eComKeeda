@@ -24,6 +24,7 @@ const useForm = (callback, validate) => {
       [event.target.name]: event.target.value,
     }))
     // setErrors(validate(values))
+
   }
 
   const onBlur = event => {
@@ -39,5 +40,7 @@ const useForm = (callback, validate) => {
     errors,
   }
 }
+
+//Testing....
 
 export default useForm

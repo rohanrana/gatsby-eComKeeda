@@ -12,7 +12,7 @@ const Register = () => {
 
   function register() {
     console.log("No errors, submit callback called!")
-    alert(JSON.stringify(values))
+    // alert(JSON.stringify(values))
   }
   return (
     <Layout register={true}>
@@ -24,7 +24,7 @@ const Register = () => {
             access to all articles.
           </h6>
           <h6 className={style.loginSubheading}>
-            We will send you your login details on mentioned email id. So
+            We will send you your login details on mentioned email id. So2
             mention the correct one 🙂
           </h6>
           <div className={style.loginInnerContainer}>
