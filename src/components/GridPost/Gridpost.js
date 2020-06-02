@@ -9,7 +9,6 @@ export default function Gridpost(props) {
       <Link to={`/${props.slug}/`}>
         <div style={{ height: props.height }} className={style.parent}>
           <div
-            // style={{ backgroundImage: `url(${props.image})` }}
             className={style.child}
           >
             <OptimizedImage src={props.image} style={{ width: "100%", height: "100%" }} />
