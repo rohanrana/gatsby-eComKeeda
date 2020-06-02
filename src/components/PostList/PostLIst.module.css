@@ -1,0 +1,84 @@
+.container {
+    justify-content: space-around;
+    align-items: flex-start;
+  
+  
+  }
+  .form {
+    margin-bottom: 10px;
+    border: 0;
+    padding: 0;
+  }
+  .form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    display: block;
+    border: 1px solid #ddd;
+    border-color: #ddd;
+    background-color: #f4f4f4;
+    background-image: none;
+    text-shadow: none;
+    color: #444;
+    font-size: 14px;
+    line-height: normal;
+    box-sizing: border-box;
+    height: auto;
+  }
+  .submitBtn input[type="submit"] {
+    width: auto !important;
+    color: white;
+    font-size: 16px;
+    padding: 15px 30px;
+    display: inline-block;
+    line-height: 1;
+    background: #19192a !important;
+    border: 0px solid silver;
+    cursor: pointer;
+  }
+  
+  .sidebarContact {
+    /* background: #85adff; */
+    display: flex;
+    padding: 10px;
+    /* text-align: center; */
+    color: #fff;
+    /* margin-top: 11px; */
+  }
+  .sidebarContact h5 {
+    color: #000113 !important;
+    margin: 0px;
+    padding: 20px 0px 20px;
+    padding-top: 0;
+  }
+  .sidebarContact a {
+    padding: 15px 30px;
+    display: inline-block;
+    color: #fff !important;
+    margin-bottom: 15px;
+    background: #000;
+    font-weight: 300;
+  }
+  .sidebarContact small {
+    display: block;
+    /* font-style: italic; */
+    font-weight: 400;
+    color: #1b110d;
+    padding-left: 10px;
+  
+  }
+  .description{
+    font-size: 12px !important;
+    color: #a0a0a0;
+    font-weight: 300;
+    width: 360px;
+    padding-left: 10px;
+
+    
+  }
+
+  .colowhitecate{
+    text-transform: uppercase;
+    color: #111;
+    font-weight: 600;
+  }
+  

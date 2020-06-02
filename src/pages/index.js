@@ -7,13 +7,15 @@ import style from "./home.module.css"
 import HorizontalCard from "../components/HorizontalCard/HorizontalCard"
 import StickyNewsLetter from "../components/StickyNewsletter/StickyNewsLetter"
 import InfiniteScroll from "react-infinite-scroll-component"
-import InnerBloglistComponent from "../components/InnerBlogListComponent/InnerBloglistComponet"
+import PostList from "../components/PostList/PostLIst"
 // ..
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       postArray: this.props.data.allWordpressPost.nodes,
+      filterdPost: this.props.data.filterdPost.nodes,
+      coronaPosts: this.props.data.coronaPosts.nodes,
       currentPage: 1,
       ItemsPerPage: 200,
       pageNumbers: null,
@@ -44,7 +46,7 @@ class IndexPage extends React.Component {
   }
   render() {
     const { postArray, currentItems } = this.state
-
+    console.log("WORDPOST", this.props.data)
     return (
       <Layout>
         <Helmet>
@@ -55,7 +57,8 @@ class IndexPage extends React.Component {
           />
           <meta
             name="keywords"
-            content="gatsby,gatsbyjs project,gatsby bootstrap"
+            content="gatsby,gatsbyjs
+             project,gatsby bootstrap"
           />
           <meta name="robot" content="index,follow" />
         </Helmet>
@@ -111,27 +114,23 @@ class IndexPage extends React.Component {
                             date={post.date}
                             author={post.author.name}
                           />
-                         <InnerBloglistComponent category={post.categories[0].name} postArray={this.state.postArray}  />
-                          <hr />
                         </Fragment>
                       )
                     }
                   })}
                 </InfiniteScroll>
-
-                {/* //Added Load More Functionality..... */}
-                {/* <Button
-                  className={style.loadMoreBtn}
-                  onClick={this.handleClickPagination}
-                >
-                  Load More Blogs
-                </Button> */}
               </div>
             </div>
           </Col>
           <Col xs={6} md={4}>
             <StickyNewsLetter />
+            <hr />
+            <PostList heading="Trending" posts={this.state.coronaPosts} />
+            <hr />
+
+            <PostList heading="Recently Added" posts={this.state.filterdPost} />
           </Col>
+          <Col></Col>
         </Row>
       </Layout>
     )
@@ -156,6 +155,46 @@ export const query = graphql`
         categories {
           name
         }
+      }
+    }
+    filterdPost: allWordpressPost(
+      limit: 10
+      filter: { date: { gte: "2020-05-28T22:11:45.000Z" } }
+    ) {
+      nodes {
+        id
+        title
+        slug
+        excerpt
+        date(formatString: "MMM,DD,YYYY")
+        author {
+          name
+        }
+        featured_media {
+          source_url
+        }
+        categories {
+          name
+        }
+      }
+    }
+    coronaPosts: allWordpressPost(
+      limit: 10
+      filter: { categories: { elemMatch: { slug: { eq: "corona" } } } }
+    ) {
+      nodes {
+        slug
+        title
+        featured_media {
+          source_url
+        }
+        author {
+          name
+        }
+        categories {
+          name
+        }
+        excerpt
       }
     }
   }
