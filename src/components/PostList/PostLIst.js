@@ -1,5 +1,5 @@
 import React from "react"
-import style from "./postlist.module.css"
+import style from "./spostlist.module.css"
 import OptimizedImage from "../image"
 export default function PostList({ posts, heading }) {
   return (
