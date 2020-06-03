@@ -17,7 +17,7 @@ class IndexPage extends React.Component {
       filterdPost: this.props.data.filterdPost.nodes,
       coronaPosts: this.props.data.coronaPosts.nodes,
       currentPage: 1,
-      ItemsPerPage: 200,
+      ItemsPerPage: 250,
       pageNumbers: null,
       currentItems: [],
     }
